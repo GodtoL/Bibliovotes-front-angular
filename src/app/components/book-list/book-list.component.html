@@ -1,7 +1,23 @@
-<p>book-list works!</p>
+<h1> Recomendacion de nuestros usuarios</h1>
 <ul>
     @for(book of books; track book.id) {
-        <li> {{book.title}}</li>
-
+        <li> 
+            <a href="/">{{book.title}}</a>
+            <p className="short-description">{{book.shortDescription}}</p>
+                  <div className="votes">
+                    <p>Votos:</p>
+                    <p>{{book.votesCount}}</p>
+                    <p>Comentarios:</p>
+                    <p>{{book.comments.length}}</p>
+                  </div>
+                <ul>
+                    <li>🏷️</li>
+                    @for(tag of book.tags; track $index) {
+                        <li><p>{{tag.name}}</p></li>
+                      }
+                </ul>
+                
+            
+        </li>
     }
 </ul>
