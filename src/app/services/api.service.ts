@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  constructor() { }
+  API_URL : String = 'https://bibliovotes-production.up.railway.app/api/book';
+  constructor(private httpClient : HttpClient) { }
+
+  getBooks(){
+    return this.httpClient.get(`${this.API_URL}`);
+  }
 }
