@@ -1,10 +1,11 @@
+<button> Agregar Recomendación</button>
 <h1> Recomendacion de nuestros usuarios</h1>
 <ul>
     @for(book of books; track book.id) {
         <li> 
             <a href="/">{{book.title}}</a>
-            <p className="short-description">{{book.shortDescription}}</p>
-                  <div className="votes">
+            <p class="short-description">{{book.shortDescription}}</p>
+                  <div class="votes">
                     <p>Votos:</p>
                     <p>{{book.votesCount}}</p>
                     <p>Comentarios:</p>
@@ -17,7 +18,21 @@
                       }
                 </ul>
                 
-            
         </li>
     }
 </ul>
+
+<section>
+    <h1> Filtrar por Categorias</h1>
+    <ul>
+        @for(tag of tags; track tag.id) {
+            <li> 
+                <label>
+                    <input type="checkbox" >
+                    {{tag.name}}
+                  </label>
+            </li>
+        }
+    </ul>
+
+</section>
