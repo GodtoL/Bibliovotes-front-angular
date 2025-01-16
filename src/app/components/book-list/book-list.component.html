@@ -3,7 +3,7 @@
 <ul>
     @for(book of books; track book.id) {
         <li> 
-            <a href="/">{{book.title}}</a>
+            <a href="/book/{{book.id}}">{{book.title}}</a>
             <p class="short-description">{{book.shortDescription}}</p>
                   <div class="votes">
                     <p>Votos:</p>
