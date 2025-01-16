@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { TagService } from '../../services/tag.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-book-details',
@@ -9,19 +11,24 @@ import { TagService } from '../../services/tag.service';
   styleUrl: './book-details.component.css'
 })
 export class BookDetailsComponent {
-    books : any = [];
+   id: string | null = null;
+   private routeSub: Subscription | null = null;
+    book : any = {};
     tags : any = [];
-    constructor(private apiService : ApiService, private tagService : TagService) { }
+    constructor(private route: ActivatedRoute, private apiService : ApiService, private tagService : TagService) { }
   
   
     ngOnInit(): void {
-      this.getBooks();
       this.getTags();
+      this.routeSub = this.route.paramMap.subscribe((params) => {
+        this.id = params.get('id');
+      });
+      this.getBookById(this.id);
     }
   
-    getBooks(){
-      this.apiService.getBooks().subscribe((data) => {
-        this.books = data;
+    getBookById(id :any){
+      this.apiService.getBookById(id).subscribe((data) => {
+        this.book = data;
       });
     }
   

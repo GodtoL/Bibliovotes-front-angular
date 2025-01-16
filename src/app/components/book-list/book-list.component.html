@@ -3,7 +3,6 @@
 <ul>
     @for(book of books; track book.id) {
         <li> 
-            @if (tags.length > 0) {}
             <a href="/book/{{book.id}}">{{book.title}}</a>
             <p class="short-description">{{book.shortDescription}}</p>
                   <div class="votes">
@@ -18,7 +17,6 @@
                         <li><p>{{tag.name}}</p></li>
                       }
                 </ul>
-                
         </li>
     }
 </ul>

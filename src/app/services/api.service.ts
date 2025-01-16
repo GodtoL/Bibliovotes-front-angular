@@ -12,4 +12,8 @@ export class ApiService {
   getBooks(){
     return this.httpClient.get(`${this.API_URL}`);
   }
+
+  getBookById(id : string){
+    return this.httpClient.get(`${this.API_URL}/${id}`);
+  }
 }

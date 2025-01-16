@@ -15,7 +15,18 @@ export class BookListComponent implements OnInit {
   tags : any = [];
   constructor(private apiService : ApiService, private tagService : TagService) { }
 
+  selectedTags: number[] = [];
+  trackById(index: number, tag: any): number {
+    return tag.id; 
+  }
 
+  onCheckboxChange(tag: any): void {
+    if (tag.selected) {
+      this.selectedTags.push(tag.id); 
+    } else {
+      this.selectedTags = this.selectedTags.filter(id => id !== tag.id); 
+  }
+}
   ngOnInit(): void {
     this.getBooks();
     this.getTags();
