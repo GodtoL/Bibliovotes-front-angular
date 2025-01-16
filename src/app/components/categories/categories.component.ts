@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TagService } from '../../services/tag.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class CategoriesComponent {
 
+  tags : any = [];
+  
+  constructor( private tagService : TagService) { }
+
+  ngOnInit(): void {
+    this.getTags();
+  }
+
+  getTags(){
+    this.tagService.getTags().subscribe((data) => {
+      this.tags = data;
+    });
+  }
 }
