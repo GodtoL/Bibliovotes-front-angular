@@ -16,4 +16,8 @@ export class ApiService {
   getBookById(id : string){
     return this.httpClient.get(`${this.API_URL}/${id}`);
   }
+
+  voteBook(id : string){
+    return this.httpClient.put(`${this.API_URL}/${id}`, {});
+  }
 }
