@@ -15,6 +15,12 @@
         <h3> Comentarios</h3>
         <p> {{book.comments.length}}</p>
     </div>
+    <form [formGroup]="commentForm" >
+        <fieldset>
+            <input type="text" id="comment-content" formControlName="content" placeholder="Escribe un comentario" required/>
+        </fieldset>
+        <button (click)="handleComment()"> Comentar </button>
+    </form>
     <ul>
         @for (comment of book.comments; track comment.id) {
             <li>

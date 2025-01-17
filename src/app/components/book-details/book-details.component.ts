@@ -68,4 +68,24 @@ export class BookDetailsComponent {
         }
       });
     }
+
+    handleComment(){
+      if (!this.content.value || this.content.value.trim() === '') {
+        console.error('El comentario no puede estar vacío.');
+        return;
+      }
+      const data = {
+        content : this.content.value,
+        bookId : this.id
+      }
+      this.apiService.commentBook(data).subscribe({
+        next: () => {
+          this.getBookById(this.id);
+          this.content.setValue('');
+        },
+        error: (err) => {
+          console.error('Error al comentar:', err);
+        }
+      });
+    }
 }
