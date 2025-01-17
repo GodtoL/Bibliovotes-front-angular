@@ -3,22 +3,34 @@ import { ApiService } from '../../services/api.service';
 import { TagService } from '../../services/tag.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-book-details',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './book-details.component.html',
   styleUrl: './book-details.component.css'
 })
 export class BookDetailsComponent {
+  commentForm : FormGroup;
+  content : FormControl;
+
   isVoting : boolean = false;
   localVotes : number = 0;
   id: string | null = null;
   private routeSub: Subscription | null = null;
   book : any = {};
   tags : any = [];
-  constructor(private route: ActivatedRoute, private apiService : ApiService, private tagService : TagService) { }
-  
+  constructor(
+    private route: ActivatedRoute, 
+    private apiService : ApiService, 
+    private tagService : TagService) {
+
+      this.content = new FormControl('');
+      this.commentForm = new FormGroup({
+        content : this.content
+      })
+    }
   
     ngOnInit(): void {
 
@@ -29,7 +41,6 @@ export class BookDetailsComponent {
       this.getBookById(this.id);
 
     }
-    
 
     getBookById(id :any){
       this.apiService.getBookById(id).subscribe((data) => {
@@ -56,6 +67,5 @@ export class BookDetailsComponent {
           this.isVoting = false;
         }
       });
-
     }
 }
