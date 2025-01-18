@@ -1,5 +1,11 @@
-<button > Agregar Recomendación</button>
-<h1> Recomendacion de nuestros usuarios</h1>
+<button (click)="openModal()"> Agregar Recomendación</button>
+
+<app-modal [isVisible]="isModalVisible" (close)="closeModal()">
+    <h2>Este es un Modal</h2>
+    <p>Contenido del modal aquí.</p>
+  </app-modal>
+
+  <h1> Recomendacion de nuestros usuarios</h1>
 <ul>
     @for(book of books; track book.id) {
         <li> 

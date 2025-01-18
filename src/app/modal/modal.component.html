@@ -1,0 +1,9 @@
+@if (isVisible) {
+    <div class="modal-overlay">
+        <div class="modal-content">
+          <button (click)="closeModal()">Cerrar</button>
+          <ng-content></ng-content> 
+        </div>
+      </div>
+      
+}

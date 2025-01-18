@@ -1,16 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { TagService } from '../../services/tag.service';
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [],
+  imports: [ModalComponent],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'
 })
 
 export class BookListComponent implements OnInit {
+
+  isModalVisible = false;
+
+  openModal() {
+    this.isModalVisible = true;
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
+  }
+
+
+
+
+
 
   books : any = [];
   tags : any = [];
