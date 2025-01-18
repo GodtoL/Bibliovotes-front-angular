@@ -79,13 +79,13 @@ export class BookListComponent implements OnInit {
   }
 
   handleBookForm(){
-
+    console.log(this.bookForm.value);
     const data = {
       title : this.title.value,
       author : this.author.value,
       shortDescription : this.shortDescription.value,
       description : this.description.value,
-      tags : this.selectedTags
+      tags: [this.tagsSelected.value]
     }
     this.apiService.addBook(data).subscribe({
       next: () => {
