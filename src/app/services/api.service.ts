@@ -29,4 +29,8 @@ export class ApiService {
   addBook(data : any){
     return this.httpClient.post(`${this.API_URL}`, data);
   }
+
+  getPopularBooks(){
+    return this.httpClient.get(`${this.API_URL}/popular`);
+  }
 }

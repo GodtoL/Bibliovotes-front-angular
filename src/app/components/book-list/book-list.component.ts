@@ -31,7 +31,9 @@ export class BookListComponent implements OnInit {
 
   // Datos de la lista de libros
   books : any = [];
+  popularBooks : any = [];
   tags : any = [];
+  
   constructor(private apiService : ApiService, private tagService : TagService) { 
     
     this.title = new FormControl('');
@@ -50,25 +52,40 @@ export class BookListComponent implements OnInit {
   }
 
   selectedTags: number[] = [];
-  trackById(index: number, tag: any): number {
-    return tag.id; 
-  }
-
-  onCheckboxChange(tag: any): void {
-    if (tag.selected) {
-      this.selectedTags.push(tag.id); 
+  
+  onCheckboxChange(event: any, tagId: number): void {
+    if (this.selectedTags) {
+      for (let book of this.books) {
+        if (book.tags.includes(tagId)) {
+          this.books.push(book);
     } else {
-      this.selectedTags = this.selectedTags.filter(id => id !== tag.id); 
-  }
-}
+      this.getBooks();
+    }
+
+    if (event.target.checked) {
+      this.selectedTags.push(tagId);
+      console.log(this.selectedTags);
+    } else {
+      this.selectedTags = this.selectedTags.filter(id => id !== tagId);
+      console.log(this.selectedTags);
+    }
+  }}}
+
   ngOnInit(): void {
     this.getBooks();
     this.getTags();
+    this.getPopularBooks();
   }
 
   getBooks(){
     this.apiService.getBooks().subscribe((data) => {
       this.books = data;
+    });
+  }
+
+  getPopularBooks(){
+    this.apiService.getPopularBooks().subscribe((data) => {
+      this.popularBooks = data;
     });
   }
 
@@ -87,6 +104,7 @@ export class BookListComponent implements OnInit {
       description : this.description.value,
       tags: [this.tagsSelected.value]
     }
+
     this.apiService.addBook(data).subscribe({
       next: () => {
         this.getBooks();

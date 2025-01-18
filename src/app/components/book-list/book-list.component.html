@@ -27,23 +27,30 @@
 
   <h1> Recomendacion de nuestros usuarios</h1>
 <ul>
+    @if(selectedTags.length > 0) {
+        
+    }
     @for(book of books; track book.id) {
-        <li> 
-            <a href="/book/{{book.id}}">{{book.title}}</a>
-            <p class="short-description">{{book.shortDescription}}</p>
-                  <div class="votes">
-                    <p>Votos:</p>
-                    <p>{{book.votesCount}}</p>
-                    <p>Comentarios:</p>
-                    <p>{{book.comments.length}}</p>
-                  </div>
-                <ul>
-                    <li>🏷️</li>
-                    @for(tag of book.tags; track $index) {
-                        <li><p>{{tag.name}}</p></li>
-                      }
-                </ul>
-        </li>
+        @if (selectedTags.length > 0 && !selectedTags.includes(book.tags[0].id)) {
+
+            } @else {
+                <li> 
+                    <a href="/book/{{book.id}}">{{book.title}}</a>
+                    <p class="short-description">{{book.shortDescription}}</p>
+                          <div class="votes">
+                            <p>Votos:</p>
+                            <p>{{book.votesCount}}</p>
+                            <p>Comentarios:</p>
+                            <p>{{book.comments.length}}</p>
+                          </div>
+                        <ul>
+                            <li>🏷️</li>
+                            @for(tag of book.tags; track $index) {
+                                <li><p>{{tag.name}}</p></li>
+                              }
+                        </ul>
+                </li>
+            }
     }
 </ul>
 
@@ -53,11 +60,21 @@
         @for(tag of tags; track tag.id) {
             <li> 
                 <label>
-                    <input type="checkbox" >
+                    <input type="checkbox" (change)="onCheckboxChange($event, tag.id)">
                     {{tag.name}}
                   </label>
             </li>
         }
     </ul>
 
+</section>
+<section>
+    <h1> Los más populares </h1>
+    <ul>
+        @for(book of popularBooks; track book.id) {
+            <li> 
+                <a href="/book/{{book.id}}">{{book.title}} </a><span>{{book.votesCount}} votos</span>
+                
+        }
+    </ul>
 </section>
