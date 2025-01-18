@@ -11,5 +11,6 @@ export class TagService {
 
   getTags(){
     return this.httpClient.get(`${this.API_URL}`);
-}
+  }
+
 }

@@ -3,6 +3,26 @@
 <app-modal [isVisible]="isModalVisible" (close)="closeModal()">
     <h2>Este es un Modal</h2>
     <p>Contenido del modal aquí.</p>
+    <form [formGroup]="bookForm" >
+
+            <label>Título: <input type="text" id="comment-content" formControlName="title" placeholder="Escribe un comentario" required/> </label>
+            <label>Autor: <input type="text" id="comment-content" formControlName="author" placeholder="Escribe un comentario" required/> </label>
+            <label>Descripción corta: <input type="text" id="comment-content" formControlName="shortDescription" placeholder="Escribe un comentario" required/> </label>
+            <label>Sinopsis: <textarea type="text" id="comment-content" formControlName="description" placeholder="Escribe un comentario" required></textarea> </label>
+            <label>Etiqueta: 
+                <select formControlName="tags" required> 
+                    <option value="" disabled>
+                        Selecciona un tag
+                    </option>
+                    @for(tag of tags; track tag.id) {
+                        <option value={{tag.id}}>
+                        {{tag.name}}
+                        </option>
+                    }
+                </select>
+            </label>
+        <button (click)="handleBookForm()"> Crear </button>
+    </form>
   </app-modal>
 
   <h1> Recomendacion de nuestros usuarios</h1>

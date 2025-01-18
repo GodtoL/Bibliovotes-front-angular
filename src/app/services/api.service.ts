@@ -25,4 +25,8 @@ export class ApiService {
   commentBook(data : any){
     return this.httpClient.post(`${this.API_COMMENT_URL}`, data);
   }
+
+  addBook(data : any){
+    return this.httpClient.post(`${this.API_URL}`, data);
+  }
 }
