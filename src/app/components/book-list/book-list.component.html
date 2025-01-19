@@ -5,10 +5,10 @@
             <h2>Recomienda un libro</h2>
             <form [formGroup]="bookForm" >
     
-                    <label class="form-label">Título: <input type="text" id="comment-content" formControlName="title" placeholder="Escribe un comentario" required/> </label>
-                    <label class="form-label">Autor: <input type="text" id="comment-content" formControlName="author" placeholder="Escribe un comentario" required/> </label>
-                    <label class="form-label">Descripción corta: <input type="text" id="comment-content" formControlName="shortDescription" placeholder="Escribe un comentario" required/> </label>
-                    <label class="form-label">Sinopsis: <textarea type="text" id="comment-content" formControlName="description" placeholder="Escribe un comentario" required></textarea> </label>
+                    <label class="form-label">Título: <input type="text" id="comment-content" formControlName="title" placeholder="Título del libro..." required/> </label>
+                    <label class="form-label">Autor: <input type="text" id="comment-content" formControlName="author" placeholder="Autor del libro..." required/> </label>
+                    <label class="form-label">Descripción corta: <input type="text" id="comment-content" formControlName="shortDescription" placeholder="Breve reseña..." required/> </label>
+                    <label class="form-label">Sinopsis: <textarea type="text" id="comment-content" formControlName="description" placeholder="Sinopsis..." required></textarea> </label>
                     <label class="form-label">Etiqueta: 
                         <select formControlName="tags" required> 
                             <option value="" disabled>
