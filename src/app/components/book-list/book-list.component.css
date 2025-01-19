@@ -170,3 +170,75 @@ ul li {
 ul li i {
   color: #0077cc;
 }
+
+/* Sección de filtros */
+.filter-section {
+
+  display: flex;
+  flex-direction: column;
+  
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Lista de filtros */
+ul.tags-filter {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-item-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.tag-item-filter:hover {
+  background-color: #f0f0f0; /* Fondo ligeramente más oscuro al pasar el ratón */
+  transform: translateX(4px); /* Ligero desplazamiento para un efecto de hover */
+}
+
+/* Etiquetas */
+.tag-title-filter {
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-input {
+  accent-color: #0077cc; /* Color azul claro para los checkboxes */
+  width: 20px;
+  height: 20px;
+}
+
+/* Espaciado de la casilla */
+.check-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #0077cc; /* Efecto de sombra al enfocar */
+}
+
+.check-input:checked {
+  background-color: #0077cc; /* Color azul cuando está marcado */
+  border-color: #0077cc;
+}
+
+.check-input:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el ratón */
+  cursor: pointer;
+}

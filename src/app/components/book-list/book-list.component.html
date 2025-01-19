@@ -50,29 +50,34 @@
         }
     </ul>
 
-    <section>
-        <h1> Filtrar por Categorias</h1>
-        <ul>
-            @for(tag of tags; track tag.id) {
-                <li> 
-                    <label>
-                        <input type="checkbox" (change)="onCheckboxChange($event, tag.id)">
-                        {{tag.name}}
-                    </label>
-                </li>
-            }
-        </ul>
+    <section class="filter-section">
+        <div>
+            <h1> Los más populares </h1>
+            <ul>
+                @for(book of popularBooks; track book.id) {
+                    <li> 
+                        <a href="/book/{{book.id}}">{{book.title}} </a><span>{{book.votesCount}} votos</span>
+                        
+                }
+            </ul>
+        </div>
+        <div>
+            <h1> Filtrar por Categorias</h1>
+            <ul class="tags-filter.list">
+                @for(tag of tags; track tag.id) {
+                    <li class="tag-item-filter"> 
+                        <label class="tag-title-filter">
+                            <input class="check-input" type="checkbox" (change)="onCheckboxChange($event, tag.id)">
+                            {{tag.name}}
+                        </label>
+                    </li>
+                }
+            </ul>
+        </div>
+
 
     </section>
-    <section>
-        <h1> Los más populares </h1>
-        <ul>
-            @for(book of popularBooks; track book.id) {
-                <li> 
-                    <a href="/book/{{book.id}}">{{book.title}} </a><span>{{book.votesCount}} votos</span>
-                    
-            }
-        </ul>
-    </section>
+
+
 
 </main>
