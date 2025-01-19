@@ -1,17 +1,25 @@
 img{
-    max-width: 5rem;
+    max-width: 2rem;
+    padding: 1rem;
 }
 
 header {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     background-color: #003366;
+    padding: 1rem 1.5rem;
 }
 
 ul{
     list-style-type: none;
     display: flex;
     gap : 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .close-menu,
@@ -33,7 +41,7 @@ ul{
         top: 0;
         right: 0;
         bottom: 0;
-        background-color: #333;
+        background-color: #003366;
         padding: 2rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0,0, -5);
     }

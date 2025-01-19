@@ -1,7 +1,7 @@
 @if (isVisible) {
     <div class="modal-overlay">
         <div class="modal-content">
-          <button (click)="closeModal()">Cerrar</button>
+          <button class="modal-close-btn" (click)="closeModal()"><i class="bi bi-x"></i></button>
           <ng-content></ng-content> 
         </div>
       </div>

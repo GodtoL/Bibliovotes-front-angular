@@ -1,0 +1,172 @@
+main{
+    margin: 2.5rem ;
+    display: flex;
+    justify-content: space-around;
+}
+.main-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+button {
+
+    background-color: #0077cc; /* Color vibrante para resaltar el botón */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados para un toque moderno */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    padding: 0.8rem 1.5rem; /* Espaciado dentro del botón */
+    display: flex;
+    align-items: center; /* Alineación de icono y texto */
+    gap: 0.5rem; /* Espacio entre el ícono y el texto */
+    cursor: pointer; /* Cambio de cursor a mano */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+  }
+  
+  button:hover {
+    background-color: #005fa3; /* Color más oscuro para el hover */
+    transform: translateY(-2px); /* Le da un efecto de "flotar" al botón */
+  }
+  
+  button:active {
+    transform: translateY(0); /* Efecto cuando se hace clic */
+  }
+  
+  button i {
+    font-size: 1.2rem; /* Tamaño del ícono */
+  }
+  /* Estilo para el formulario dentro del modal */
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espacio entre los campos */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .form-label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  input, textarea, select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    border-color: #0077cc; /* Resalta el borde cuando está enfocado */
+  }
+  
+  textarea {
+    resize: vertical; /* Permite que el usuario ajuste el tamaño verticalmente */
+    min-height: 120px; /* Tamaño mínimo para el área de texto */
+  }
+  
+  button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start; /* Alinea el botón a la izquierda */
+  }
+  
+  button:hover {
+    background-color: #005fa3; /* Color de hover más oscuro */
+    transform: translateY(-2px); /* Efecto de desplazamiento cuando se pasa el cursor */
+  }
+  
+  button:active {
+    transform: translateY(0); /* Efecto de "presionar" al hacer clic */
+  }
+  
+  select {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  option {
+    padding: 0.8rem;
+  }
+  
+  /* Estilo de los libros recomendados */
+form{
+  display: flex;
+  flex-direction: column;
+}
+li {
+  background-color: #fafafa; /* Fondo claro para cada elemento */
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  font-size: 1.2rem;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+/* Descripción corta */
+.short-description {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Información de votos y comentarios */
+.votes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.votes p {
+  margin: 0;
+}
+
+/* Etiquetas */
+ul li {
+  gap: 0.5rem;
+  color: #555;
+  font-size: 1rem;
+  list-style: none;
+}
+.tags-list{
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+ul li i {
+  color: #0077cc;
+}
