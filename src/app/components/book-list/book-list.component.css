@@ -10,6 +10,10 @@ main{
 
 }
 
+.book-item{
+  width: 80%;
+}
+
 button {
 
     background-color: #0077cc; /* Color vibrante para resaltar el botón */
@@ -241,4 +245,57 @@ ul.tags-filter {
 .check-input:hover {
   transform: scale(1.1); /* Efecto de escala al pasar el ratón */
   cursor: pointer;
+}
+.close-menu,
+.menu-toggle{
+    display: none;
+}
+@media screen and (max-width: 768px){
+  .filter-section{
+    opacity: 0;
+    visibility: hidden;
+}
+.filter-section{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #003366;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0,0, -5);
+    height: 70rem;
+}
+
+.title-filter{
+    color: #f0f0f0;
+}
+.filter-visible{
+    opacity: 1;
+    visibility: visible;
+}
+.tag-item-filter{
+  width: 15rem;
+}
+.filter-div{
+  display: flex;
+  flex-wrap: 	wrap;
+}
+.popular-div{
+    display: none;
+}
+
+
+.close-menu,
+.menu-toggle{
+    display: block;
+}
+
+ul{
+    flex-direction: column;
+    align-items: end;
+}
 }

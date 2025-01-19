@@ -3,10 +3,11 @@ import { ApiService } from '../../services/api.service';
 import { TagService } from '../../services/tag.service';
 import { ModalComponent } from '../../modal/modal.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-list',
-  imports: [ModalComponent, ReactiveFormsModule],
+  imports: [ModalComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'
 })
@@ -114,5 +115,12 @@ export class BookListComponent implements OnInit {
         console.error('Error al comentar:', err);
       }
     });
+  }
+
+  // Toggle menu
+  isActive: boolean = false; 
+
+  toggleMenu() {
+    this.isActive = !this.isActive;
   }
 }
