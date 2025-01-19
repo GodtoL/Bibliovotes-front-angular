@@ -1,15 +1,29 @@
 <header>
-    <div className="head-menu">
-        <a href="/">
-            <img src="/images/pngwing.com.png" alt="logo BiblioVotes" />
-        </a>
-        <input type="text" placeholder="Buscar libro...">   
-        <a href="/">Inicio</a>>
-        <a href="/categories">Categorias</a>>
-        
-    </div>
-    <div className="head-menu">
-        <a href="/">Iniciar sesión</a>
-        <a href="/">Registrarse</a>
-    </div>
+      <a href="/">
+        <img src="/images/pngwing.com.png" alt="logo BiblioVotes" />
+      </a>
+      <!-- Botón menú hamburguesa -->
+      <button class="menu-toggle" (click)="toggleMenu()" aria-label="Abrir menú">
+        <i class="bi bi-list"></i>
+      </button>
+      <nav class="menu" [ngClass]="{ 'menu-visible': isActive }">
+        <button class="close-menu" (click)="toggleMenu()"> <i class="bi bi-x"></i></button>
+        <ul>
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+            <li>
+                <a href="/categories">Categorías</a>
+            </li>
+            <li>
+                <a href="/">Iniciar sesión</a>
+            </li>
+            <li>
+                <a href="/">Registrarse</a>
+            </li>
+        </ul>
+      </nav>
+  
+
 </header>
+  

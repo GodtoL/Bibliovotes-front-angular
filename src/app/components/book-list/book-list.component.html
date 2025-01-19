@@ -1,8 +1,7 @@
 <button (click)="openModal()"> Agregar Recomendación</button>
 
 <app-modal [isVisible]="isModalVisible" (close)="closeModal()">
-    <h2>Este es un Modal</h2>
-    <p>Contenido del modal aquí.</p>
+    <h2>Recomienda un libro</h2>
     <form [formGroup]="bookForm" >
 
             <label>Título: <input type="text" id="comment-content" formControlName="title" placeholder="Escribe un comentario" required/> </label>
@@ -66,9 +65,6 @@
             </li>
         }
     </ul>
-
-</section>
-<section>
     <h1> Los más populares </h1>
     <ul>
         @for(book of popularBooks; track book.id) {

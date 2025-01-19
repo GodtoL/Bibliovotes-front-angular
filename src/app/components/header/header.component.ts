@@ -9,5 +9,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  isActive: boolean = false; 
 
+  toggleMenu() {
+    this.isActive = !this.isActive;
+  }
+  
 }
