@@ -3,7 +3,7 @@
     <h3> {{book.author}}</h3>
     <p> {{book.description}}</p>
     <ul>
-        <li>🏷️</li>
+        <li><i class="bi bi-tag-fill"></i></li>
         @for(tag of book.tags; track $index) {
             <li><p>{{tag.name}}</p></li>
           }
@@ -12,8 +12,7 @@
         <button (click)="onVote(book.id)" [disabled]="isVoting"> Votar {{localVotes}}</button>
     </div>
     <div>
-        <h3> Comentarios</h3>
-        <p> {{book.comments.length}}</p>
+        <h3> Comentarios {{book.comments.length}}</h3>
     </div>
     <form [formGroup]="commentForm" >
         <fieldset>
@@ -21,9 +20,9 @@
         </fieldset>
         <button (click)="handleComment()"> Comentar </button>
     </form>
-    <ul>
+    <ul class="comments-list">
         @for (comment of book.comments; track comment.id) {
-            <li>
+            <li class="comment-box">
                 <h3> {{comment.user.username}}</h3>
                 <p> {{comment.content}}</p>
             </li>
