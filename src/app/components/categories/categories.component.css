@@ -1,0 +1,42 @@
+/* Estilo para la lista de categorías */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  li {
+    background-color: #ffffff; /* Fondo blanco para cada categoría */
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+    width: max-content;
+    min-width: 150px;
+  }
+  
+  li:hover {
+    background-color: #f0f0f0; /* Fondo más oscuro al pasar el ratón */
+    transform: translateY(-4px); /* Desplazamiento hacia arriba al hacer hover */
+  }
+  
+  a {
+    color: #0077cc; /* Color azul para los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #005f99; /* Color más oscuro de azul al hacer hover */
+  }
+  
